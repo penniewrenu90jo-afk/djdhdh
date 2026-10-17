@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - checkout
+      - run:
+          name: Hello CircleCI
+          command: echo "pipeline is working"
+
+workflows:
+  build-and-test:
+    jobs:
+      - build-and-test
